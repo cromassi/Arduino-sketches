@@ -1,0 +1,384 @@
+// Arduino sketch: Dice game
+
+//author: Massimo Croci - 09.01.2015 - Sofia, Bulgaria (EU)
+
+const unsigned int pinZERO=2;    // connect the first LED to port 2 digital
+const unsigned int pinUNO=4;     // connect the second LED to port 4 digital
+const unsigned int pinDUE=7;     // connect the third LED to port 7 digital
+int ResultDiePlayer;
+int ResultDieArduino;
+const unsigned int DelayTime=5000;
+int j=1;         // counter of the function LOOP's processes
+
+
+
+void setup (){   // here the function SETUP starts
+
+pinMode(pinZERO,OUTPUT);
+pinMode(pinUNO,OUTPUT);
+pinMode(pinDUE,OUTPUT);
+Serial.begin(9600);
+Serial.println(" Welcome to the die game !!!!!");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" You are going to play dice against the Arduino Uno Microcontroller");
+Serial.println(" ------------------------------------------------------------------");
+Serial.println(" ");
+Serial.println(" ");
+
+
+
+}     // here the function SETUP ends
+
+
+
+
+
+
+
+void loop (){    // here the function LOOP starts
+
+
+
+Serial.println(" --------------------------------------------------------");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.print(" This is your game number ");
+Serial.println(j);
+delay(3000);
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" The computer is rolling the die for you.......... ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+ResultDiePlayer=random(1,7);
+delay(10000);
+Serial.print(" The result of your die is ");
+Serial.println(ResultDiePlayer);
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+
+if (ResultDiePlayer==1) {     // start of the first cycle IF (ResultDiePlayer is 1)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is off, LED2 in off and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieplayer is 1)  
+
+
+if (ResultDiePlayer==2) {     // start of the first cycle IF (ResultDiePlayer is 2)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is off, LED2 in on and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDiePlayer is 2) 
+
+
+
+if (ResultDiePlayer==3) {     // start of the first cycle IF (ResultDiePlayer is 3)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is off, LED2 in on and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDiePlayer is 3) 
+
+
+
+
+if (ResultDiePlayer==4) {     // start of the first cycle IF (ResultDiePlayer is 4)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is on, LED2 in off and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieplayer is 4) 
+
+
+
+
+if (ResultDiePlayer==5) {     // start of the first cycle IF (ResultDiePlayer is 5)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is on, LED2 in off and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDiePlayer is 5) 
+
+
+
+
+if (ResultDiePlayer==6) {     // start of the first cycle IF (ResultDiePlayer is 6)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDiePlayer);
+Serial.println(", LED 1 is on, LED2 in on and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieplayer is 6) 
+
+
+
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" The computer is rolling the die for Arduino.......... ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+ResultDieArduino=random(1,7);
+delay(10000);
+Serial.print(" The result of Arduino's die is ");
+Serial.println(ResultDieArduino);
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+
+if (ResultDieArduino==1) {     // start of the first cycle IF (ResultDieArduino is 1)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is off, LED2 in off and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 1)  
+
+
+if (ResultDieArduino==2) {     // start of the first cycle IF (ResultDieArduino is 2)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is off, LED2 in on and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 2) 
+
+
+
+if (ResultDieArduino==3) {     // start of the first cycle IF (ResultDieArduino is 3)  
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is off, LED2 in on and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 3) 
+
+
+
+
+if (ResultDieArduino==4) {     // start of the first cycle IF (ResultDieArduino is 4)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is on, LED2 in off and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 4) 
+
+
+
+
+if (ResultDieArduino==5) {     // start of the first cycle IF (ResultDieArduino is 5)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, HIGH);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is on, LED2 in off and LED 3 is on. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 5) 
+
+
+
+
+if (ResultDieArduino==6) {     // start of the first cycle IF (ResultDieArduino is 6)  
+
+digitalWrite(pinZERO, HIGH);
+digitalWrite(pinUNO, HIGH);
+digitalWrite(pinDUE, LOW);
+Serial.print(" Because the result of your die is ");
+Serial.print(ResultDieArduino);
+Serial.println(", LED 1 is on, LED2 in on and LED 3 is off. ");
+delay(DelayTime);
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+delay(2000);
+
+} // end of the first cycle IF (ResultDieArduino is 6) 
+
+
+
+
+
+if(ResultDiePlayer<ResultDieArduino){    // IF starts (in case Arduino Uno won) 
+
+digitalWrite(pinZERO, LOW);
+digitalWrite(pinUNO, LOW);
+digitalWrite(pinDUE, LOW);
+Serial.println(" ");
+Serial.println(" Sorry, you lost ...................Arduino Uno microcontroller won ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" You were very unlucky this time, try again !!!!!! ");
+delay(5000);
+
+}     // IF ends (in case Arduino Uno won)
+
+
+
+
+
+if(ResultDiePlayer==ResultDieArduino){    // IF starts (in case of no winner) 
+
+   for (int i=1; i<=4; i=i+1)   {        // FOR permits to see a LED blinking one by one during congratulations to the player
+ 
+       digitalWrite(pinZERO, HIGH);
+       delay(250);
+       digitalWrite(pinZERO, LOW);
+       delay(250);
+       digitalWrite(pinUNO, HIGH);
+       delay(250);
+       digitalWrite(pinUNO, LOW);
+       delay(250);
+       digitalWrite(pinDUE, HIGH);
+       delay(250);
+       digitalWrite(pinDUE, LOW);
+       delay(250);
+     
+    }
+
+Serial.println(" ");
+Serial.println(" Sorry, same result...no winner  ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" You were unlucky this time, try again !!!!!! ");
+delay(6000);
+
+}  
+
+if(ResultDiePlayer>ResultDieArduino){  
+
+
+for (int i=1; i<=12; i=i+1){     // FOR permits to see all LEDS blinking during congratulations to the player
+ 
+       digitalWrite(pinZERO, HIGH);
+       digitalWrite(pinUNO, HIGH);
+       digitalWrite(pinDUE, HIGH);
+       delay(250);
+       digitalWrite(pinZERO, LOW);
+       digitalWrite(pinUNO, LOW);
+       digitalWrite(pinDUE, LOW);
+       delay(250);
+     
+ }
+ 
+Serial.println(" ");
+Serial.println(" Congratulations, you won !!!!!!!!! ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" ");
+Serial.println(" You were very lucky this time, try again !!!!!! ");
+delay(6000);
+
+}  // IF ends (in case the player won) 
+
+
+
+
+
+
+j=j+1;          // increment (+1) for the counter of the function LOOP's processes
+
+
+}  //here the function LOOP ends
